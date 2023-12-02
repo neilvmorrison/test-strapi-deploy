@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_forms_form_fields",
+  "info": {
+    "displayName": "FormField",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string",
+      "required": true
+    },
+    "Value": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "company_pages",
+  "info": {
+    "singularName": "company-page",
+    "pluralName": "company-pages",
+    "displayName": "CompanyPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "PageTitle": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "PageDescription": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "singleType",
+  "collectionName": "login_pages",
+  "info": {
+    "singularName": "login-page",
+    "pluralName": "login-pages",
+    "displayName": "LoginPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "LoginForm": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "forms.form-field"
+      ],
+      "required": true
+    },
+    "PageTitle": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    }
+  }
+}

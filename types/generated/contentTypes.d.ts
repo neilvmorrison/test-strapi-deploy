@@ -844,6 +844,7 @@ export interface ApiClassPageClassPage extends Schema.SingleType {
     singularName: 'class-page';
     pluralName: 'class-pages';
     displayName: 'ClassPage';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -862,6 +863,26 @@ export interface ApiClassPageClassPage extends Schema.SingleType {
         };
       }>;
     ClassDescription: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ClassDocuments: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Attribute.UID &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    ClaimSubmissionForm: Attribute.DynamicZone<['forms.form-field']> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -1004,6 +1025,7 @@ export interface ApiLoginPageLoginPage extends Schema.SingleType {
     singularName: 'login-page';
     pluralName: 'login-pages';
     displayName: 'LoginPage';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1016,6 +1038,19 @@ export interface ApiLoginPageLoginPage extends Schema.SingleType {
   attributes: {
     LoginForm: Attribute.DynamicZone<['forms.form-field']> &
       Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    PageTitle: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Description: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

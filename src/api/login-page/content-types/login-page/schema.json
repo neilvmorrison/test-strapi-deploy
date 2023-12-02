@@ -4,7 +4,8 @@
   "info": {
     "singularName": "login-page",
     "pluralName": "login-pages",
-    "displayName": "LoginPage"
+    "displayName": "LoginPage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -26,6 +27,23 @@
         "forms.form-field"
       ],
       "required": true
+    },
+    "PageTitle": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

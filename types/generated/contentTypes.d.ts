@@ -838,7 +838,7 @@ export interface ApiClassMemberClassMember extends Schema.CollectionType {
   };
 }
 
-export interface ApiClassPageClassPage extends Schema.SingleType {
+export interface ApiClassPageClassPage extends Schema.CollectionType {
   collectionName: 'class_pages';
   info: {
     singularName: 'class-page';
@@ -855,14 +855,14 @@ export interface ApiClassPageClassPage extends Schema.SingleType {
     };
   };
   attributes: {
-    ClassName: Attribute.String &
+    PageTitle: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    ClassDescription: Attribute.RichText &
+    PageDescription: Attribute.RichText &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
@@ -883,7 +883,6 @@ export interface ApiClassPageClassPage extends Schema.SingleType {
         };
       }>;
     ClaimSubmissionForm: Attribute.DynamicZone<['forms.form-field']> &
-      Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

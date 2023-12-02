@@ -1,5 +1,5 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "class_pages",
   "info": {
     "singularName": "class-page",
@@ -16,17 +16,16 @@
     }
   },
   "attributes": {
-    "ClassName": {
+    "PageTitle": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
       "type": "string",
-      "unique": false,
       "required": true
     },
-    "ClassDescription": {
+    "PageDescription": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -69,8 +68,7 @@
       "type": "dynamiczone",
       "components": [
         "forms.form-field"
-      ],
-      "required": true
+      ]
     }
   }
 }

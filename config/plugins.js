@@ -8,7 +8,7 @@ module.exports = ({ env }) => ({
         amazon: "https://email.us-east-1.amazonaws.com",
       },
       settings: {
-        defaultFrom: "rez@busyninja.ca",
+        defaultFrom: "reza.shaffaf@gmail.com",
         defaultReplyTo: "rez@busyninja.ca",
       },
     },

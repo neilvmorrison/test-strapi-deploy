@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "claim_submissions",
+  "info": {
+    "singularName": "claim-submission",
+    "pluralName": "claim-submissions",
+    "displayName": "ClaimSubmission",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "class_page": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::class-page.class-page",
+      "inversedBy": "claim_submissions"
+    },
+    "class_member": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::class-member.class-member",
+      "inversedBy": "claim_submissions"
+    },
+    "ClaimFields": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "forms.form-field"
+      ]
+    }
+  }
+}

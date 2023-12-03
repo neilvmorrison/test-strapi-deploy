@@ -4,7 +4,7 @@
   "info": {
     "singularName": "class-page",
     "pluralName": "class-pages",
-    "displayName": "ClassPage",
+    "displayName": "ClassAction",
     "description": ""
   },
   "options": {
@@ -69,6 +69,12 @@
       "components": [
         "forms.form-field"
       ]
+    },
+    "claim_submissions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::claim-submission.claim-submission",
+      "mappedBy": "class_page"
     }
   }
 }

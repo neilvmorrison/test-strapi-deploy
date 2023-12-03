@@ -710,6 +710,64 @@ export interface ApiAdministratorAdministrator extends Schema.CollectionType {
   };
 }
 
+export interface ApiClaimSubmissionClaimSubmission
+  extends Schema.CollectionType {
+  collectionName: 'claim_submissions';
+  info: {
+    singularName: 'claim-submission';
+    pluralName: 'claim-submissions';
+    displayName: 'ClaimSubmission';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    class_page: Attribute.Relation<
+      'api::claim-submission.claim-submission',
+      'manyToOne',
+      'api::class-page.class-page'
+    >;
+    class_member: Attribute.Relation<
+      'api::claim-submission.claim-submission',
+      'manyToOne',
+      'api::class-member.class-member'
+    >;
+    ClaimFields: Attribute.DynamicZone<['forms.form-field']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::claim-submission.claim-submission',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::claim-submission.claim-submission',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::claim-submission.claim-submission',
+      'oneToMany',
+      'api::claim-submission.claim-submission'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiClaimsDashboardClaimsDashboard extends Schema.SingleType {
   collectionName: 'claims_dashboards';
   info: {
@@ -814,6 +872,11 @@ export interface ApiClassMemberClassMember extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    claim_submissions: Attribute.Relation<
+      'api::class-member.class-member',
+      'oneToMany',
+      'api::claim-submission.claim-submission'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -843,7 +906,7 @@ export interface ApiClassPageClassPage extends Schema.CollectionType {
   info: {
     singularName: 'class-page';
     pluralName: 'class-pages';
-    displayName: 'ClassPage';
+    displayName: 'ClassAction';
     description: '';
   };
   options: {
@@ -888,6 +951,11 @@ export interface ApiClassPageClassPage extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    claim_submissions: Attribute.Relation<
+      'api::class-page.class-page',
+      'oneToMany',
+      'api::claim-submission.claim-submission'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1157,6 +1225,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::administrator.administrator': ApiAdministratorAdministrator;
+      'api::claim-submission.claim-submission': ApiClaimSubmissionClaimSubmission;
       'api::claims-dashboard.claims-dashboard': ApiClaimsDashboardClaimsDashboard;
       'api::class-member.class-member': ApiClassMemberClassMember;
       'api::class-page.class-page': ApiClassPageClassPage;

@@ -58,6 +58,12 @@
         }
       },
       "type": "date"
+    },
+    "claim_submissions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::claim-submission.claim-submission",
+      "mappedBy": "class_member"
     }
   }
 }

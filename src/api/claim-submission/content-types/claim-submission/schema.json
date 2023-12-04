@@ -22,12 +22,6 @@
       "target": "api::class-page.class-page",
       "inversedBy": "claim_submissions"
     },
-    "class_member": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::class-member.class-member",
-      "inversedBy": "claim_submissions"
-    },
     "ClaimFields": {
       "pluginOptions": {
         "i18n": {
@@ -38,6 +32,12 @@
       "components": [
         "forms.form-field"
       ]
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "claim_submissions"
     }
   }
 }

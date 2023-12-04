@@ -5,10 +5,12 @@ export interface FormsFormField extends Schema.Component {
   info: {
     displayName: 'FormField';
     icon: 'apps';
+    description: '';
   };
   attributes: {
     Label: Attribute.String & Attribute.Required;
-    Value: Attribute.String & Attribute.Required;
+    Value: Attribute.String;
+    DisplayLabel: Attribute.String & Attribute.Required;
   };
 }
 

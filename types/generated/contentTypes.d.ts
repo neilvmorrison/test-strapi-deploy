@@ -717,6 +717,21 @@ export interface ApiClaimSubmissionClaimSubmission
       'manyToOne',
       'plugin::users-permissions.user'
     >;
+    ClaimStatus: Attribute.Enumeration<
+      ['Accepted', 'Rejected', 'Pending Review', 'Under Review']
+    > &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Attribute.DefaultTo<'Pending Review'>;
+    AdministratorNotes: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -22,12 +22,6 @@
       "target": "api::class-page.class-page",
       "inversedBy": "claim_submissions"
     },
-    "class_member": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::class-member.class-member",
-      "inversedBy": "claim_submissions"
-    },
     "ClaimFields": {
       "pluginOptions": {
         "i18n": {
@@ -38,6 +32,35 @@
       "components": [
         "forms.form-field"
       ]
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "claim_submissions"
+    },
+    "ClaimStatus": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "Accepted",
+        "Rejected",
+        "Pending Review",
+        "Under Review"
+      ],
+      "default": "Pending Review"
+    },
+    "AdministratorNotes": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
     }
   }
 }
